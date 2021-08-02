@@ -1,6 +1,19 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: 30px;
+  background-color: #f2f2f2;
+}
+
 .container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 300px;
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
@@ -23,13 +36,13 @@
 /******************************
  * Vendor                     *
  *****************************/
-.vendor {
+#vendor {
   grid-area: 2 / 2 / 3 / 3;
 }
 
 /******************************
  * Paiement                   *
  *****************************/
-.paiement {
+#paiement {
   grid-area: 3 / 2 / 4 / 3;
 }
