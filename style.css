@@ -1,0 +1,35 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+/******************************
+ * Vehicule                   *
+ *****************************/
+#vehicule {
+  grid-area: 1 / 1 / 4 / 2;
+}
+
+/******************************
+ * Description                *
+ *****************************/
+#description {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+/******************************
+ * Vendor                     *
+ *****************************/
+.vendor {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+/******************************
+ * Paiement                   *
+ *****************************/
+.paiement {
+  grid-area: 3 / 2 / 4 / 3;
+}
