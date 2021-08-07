@@ -1,4 +1,105 @@
+$images: '0.jpg', '1.png', '2.png', '3.jpg', '4.jpg', '5.jpeg', '6.jpg', '7.jpg';
+
 #vehicule {
     grid-area: 1 / 1 / 4 / 2;
-    background-color:#f2f2f2;
+    background-color: #fff;
+
+    & > div + div {
+        padding: 25px;
+    }
+
+    .image {
+        height: 520px;
+        background: url('./assets/car/0.jpg') center/cover;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .thumbnails {
+        display: flex;
+        justify-content: space-between;
+
+        @for $i from 2 through length($images) {
+            $image: nth($images, $i);
+            .img:nth-child(#{$i - 1}) {
+                height: 108px;
+                width: 19%;
+                background-color: bisque;
+                background: url('./assets/car/' + $image) center/cover;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .specifications {
+        .specifications-list {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+            .specification {
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: space-between;
+                width: calc(50% - 30px / 2);
+                padding: 30px 0;
+                border-bottom: 1px solid #e1e8ee;
+
+                .title {
+                    color: $grey;
+                }
+
+                .data {
+                }
+            }
+        }
+    }
+
+    .contact {
+        .form {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+            .input {
+                width: calc(50% - 30px / 2);
+                margin-top: 30px;
+
+                input {
+                    height: 50px;
+                }
+            }
+
+            .textarea {
+                width: 100%;
+                margin-top: 30px;
+
+                textarea {
+                    height: 180px;
+                }
+            }
+
+            label {
+                width: 100%;
+                color: $grey;
+                margin-top: 30px;
+            }
+
+            input,
+            textarea {
+                font-family: "Lato", sans-serif;
+                width: 100%;
+                border: 1px solid #e1e8ee;
+                border-radius: 5px;
+                margin-top: 15px;
+                font-size: 1.1em;
+                padding: 15px;
+            }
+        }
+    }
 }

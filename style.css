@@ -135,7 +135,7 @@ header .right .button + .button {
 */
 .navigation {
   height: 100px;
-  max-width: 1400px;
+  max-width: 1480px;
   margin: 0 auto;
   padding: 40px 0;
 }
@@ -164,12 +164,135 @@ header .right .button + .button {
   grid-template-columns: 1fr 490px;
   grid-template-rows: repeat(3, auto);
   grid-gap: 30px;
-  max-width: 1400px;
-  margin: 40px auto;
+  max-width: 1480px;
+  margin: 0 auto 40px;
 }
 .container #vehicule {
   grid-area: 1/1/4/2;
-  background-color: #f2f2f2;
+  background-color: #fff;
+}
+.container #vehicule > div + div {
+  padding: 25px;
+}
+.container #vehicule .image {
+  height: 520px;
+  background: url("./assets/car/0.jpg") center/cover;
+  border-radius: 10px 10px 0 0;
+}
+.container #vehicule .thumbnails {
+  display: flex;
+  justify-content: space-between;
+}
+.container #vehicule .thumbnails .img:nth-child(1) {
+  height: 108px;
+  width: 19%;
+  background-color: bisque;
+  background: url("./assets/car/1.png") center/cover;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.container #vehicule .thumbnails .img:nth-child(2) {
+  height: 108px;
+  width: 19%;
+  background-color: bisque;
+  background: url("./assets/car/2.png") center/cover;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.container #vehicule .thumbnails .img:nth-child(3) {
+  height: 108px;
+  width: 19%;
+  background-color: bisque;
+  background: url("./assets/car/3.jpg") center/cover;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.container #vehicule .thumbnails .img:nth-child(4) {
+  height: 108px;
+  width: 19%;
+  background-color: bisque;
+  background: url("./assets/car/4.jpg") center/cover;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.container #vehicule .thumbnails .img:nth-child(5) {
+  height: 108px;
+  width: 19%;
+  background-color: bisque;
+  background: url("./assets/car/5.jpeg") center/cover;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.container #vehicule .thumbnails .img:nth-child(6) {
+  height: 108px;
+  width: 19%;
+  background-color: bisque;
+  background: url("./assets/car/6.jpg") center/cover;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.container #vehicule .thumbnails .img:nth-child(7) {
+  height: 108px;
+  width: 19%;
+  background-color: bisque;
+  background: url("./assets/car/7.jpg") center/cover;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.container #vehicule .specifications .specifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.container #vehicule .specifications .specifications-list .specification {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(50% - 30px / 2);
+  padding: 30px 0;
+  border-bottom: 1px solid #e1e8ee;
+}
+.container #vehicule .specifications .specifications-list .specification .title {
+  color: #8091a5;
+}
+.container #vehicule .contact .form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.container #vehicule .contact .form .input {
+  width: calc(50% - 30px / 2);
+  margin-top: 30px;
+}
+.container #vehicule .contact .form .input input {
+  height: 50px;
+}
+.container #vehicule .contact .form .textarea {
+  width: 100%;
+  margin-top: 30px;
+}
+.container #vehicule .contact .form .textarea textarea {
+  height: 180px;
+}
+.container #vehicule .contact .form label {
+  width: 100%;
+  color: #8091a5;
+  margin-top: 30px;
+}
+.container #vehicule .contact .form input,
+.container #vehicule .contact .form textarea {
+  font-family: "Lato", sans-serif;
+  width: 100%;
+  border: 1px solid #e1e8ee;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-size: 1.1em;
+  padding: 15px;
 }
 .container #description {
   grid-area: 1/2/2/3;

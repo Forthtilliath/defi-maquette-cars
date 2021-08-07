@@ -3,8 +3,8 @@
     grid-template-columns: 1fr 490px;
     grid-template-rows: repeat(3, auto);
     grid-gap: 30px;
-    max-width: 1400px;
-    margin: 40px auto;
+    max-width: 1480px;
+    margin: 0 auto 40px;
 
     @import './vehicule';
     @import './description';
