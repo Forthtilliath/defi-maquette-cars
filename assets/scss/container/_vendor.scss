@@ -30,6 +30,6 @@
     .description {
         line-height: 1.5em;
         color: $grey;
-        @include maxLines(4);
+        @include maxLines(3);
     }
 }

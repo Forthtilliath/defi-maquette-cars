@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 $grey: #8091a5;
+$blue: #249af2;
 
 *,
 ::before,
@@ -64,10 +65,15 @@ body {
 
     &.blue {
         color: #fff;
-        background-color: #249af2;
+        background-color: $blue;
     }
 
     &.auto {
         width: auto;
     }
+}
+
+h2.title {
+    color: #374454;
+    font-size: 1.6em;
 }

@@ -20,7 +20,7 @@
                     <div class="lang">
                         <img class="lang-img" src="./assets/fr.png" alt="flag-fr" />
                         <span class="lang-title">FR</span>
-                        <img class="lang-arrow" src="./assets/angle-down-sm.svg" alt="arrow" />
+                        <img class="lang-arrow" src="./assets/angle-sm.svg" alt="arrow" />
                     </div>
                 </div>
             </div>
@@ -94,16 +94,65 @@
                     delectus facere maxime voluptates, natus dolorum illo minus sed unde quidem.
                 </div>
                 <div>
-                  <div class="button secondary">Show more</div>
+                    <div class="button secondary">Show more</div>
                 </div>
             </section>
 
             <section id="paiement">
-                <div class="title"></div>
-                <div class="carPrice"></div>
-                <div class="downPaiement"></div>
-                <div class="loanType"></div>
-                <div class="button primary"></div>
+                <h2 class="title">Purchase &amp; Finance Calculator</h2>
+                <div>
+                    <label for="carPrice_input">Car Price</label>
+                    <input type="range" name="carPrice_range" id="carPrice_range" min="0" value="151500" max="250000" />
+                    <div class="inputPrice">
+                        <span>$</span>
+                        <input
+                            type="text"
+                            name="carPrice_input"
+                            id="carPrice_input"
+                            value="151.500"
+                            placeholder="0"
+                            data-type="currency"
+                            maxlength="7"
+                        />
+                    </div>
+                </div>
+                <div>
+                    <label for="downPayment_input">Down Payment</label>
+                    <input
+                        type="range"
+                        name="downPayment_range"
+                        id="downPayment_range"
+                        min="0"
+                        value="151500"
+                        max="250000"
+                    />
+                    <div class="inputPrice">
+                        <span>$</span>
+                        <input
+                            type="text"
+                            name="downPayment_input"
+                            id="downPayment_input"
+                            value="151.500"
+                            placeholder="0"
+                            data-type="currency"
+                            maxlength="7"
+                        />
+                    </div>
+                </div>
+                <div>
+                    <label for="loanType_select">Loan Type</label>
+                    <input type="range" name="loanType_range" id="loanType_range" min="1" value="5" max="7" />
+                    <select name="loanType_select" id="loanType_select">
+                        <option value="1">1-Year Fixed</option>
+                        <option value="2">2-Year Fixed</option>
+                        <option value="3">3-Year Fixed</option>
+                        <option value="4">4-Year Fixed</option>
+                        <option value="5" selected>5-Year Fixed</option>
+                        <option value="6">6-Year Fixed</option>
+                        <option value="7">7-Year Fixed</option>
+                    </select>
+                </div>
+                <div class="button primary">Calculate now</div>
             </section>
         </div>
 

@@ -42,6 +42,11 @@ body {
   width: auto;
 }
 
+h2.title {
+  color: #374454;
+  font-size: 1.6em;
+}
+
 header {
   height: 90px;
   background-color: #ffffff;
@@ -141,14 +146,12 @@ header .right .button + .button {
 }
 .navigation a + a::before {
   content: "";
-  background-image: url(./assets/angle-sm.svg);
-  background-size: contain;
+  background: url(./assets/angle-sm.svg) center/contain no-repeat;
   display: inline-block;
   width: 13px;
   margin-left: 20px;
   margin-right: 20px;
   height: 100%;
-  background-repeat: no-repeat;
   transform: rotate(-90deg) translate(-4px, 5px);
   filter: invert(68%) sepia(22%) saturate(234%) hue-rotate(169deg) brightness(86%) contrast(95%);
 }
@@ -176,10 +179,6 @@ header .right .button + .button {
 }
 .container #description > * + * {
   margin-top: 10px;
-}
-.container #description h2.title {
-  color: #374454;
-  font-size: 1.6em;
 }
 .container #description h2.title > span {
   font-size: 0.6em;
@@ -234,7 +233,7 @@ header .right .button + .button {
   line-height: 1.5em;
   color: #8091a5;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -243,6 +242,129 @@ header .right .button + .button {
   background-color: #fff;
   border-radius: 10px;
   padding: 30px;
+}
+.container #paiement > div {
+  margin-top: 30px;
+  /* Input Thumb */
+  /* Input Track */
+}
+.container #paiement > div label {
+  color: #8091a5;
+  display: block;
+}
+.container #paiement > div input[type=range] {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  -webkit-appearance: none;
+  margin-right: 15px;
+  width: 100%;
+  height: 7px;
+  background: #e1e8ee;
+  border-radius: 5px;
+  background-image: linear-gradient(#249af2, #249af2);
+  background-size: 70% 100%;
+  background-repeat: no-repeat;
+}
+.container #paiement > div input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #249af2;
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background 0.3s ease-in-out;
+  border: 2px solid #fff;
+}
+.container #paiement > div input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #249af2;
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background 0.3s ease-in-out;
+  border: 2px solid #fff;
+}
+.container #paiement > div input[type=range]::-ms-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #249af2;
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background 0.3s ease-in-out;
+  border: 2px solid #fff;
+}
+.container #paiement > div input[type=range]::-webkit-slider-thumb:hover {
+  background: #0b72c1;
+}
+.container #paiement > div input[type=range]::-moz-range-thumb:hover {
+  background: #0b72c1;
+}
+.container #paiement > div input[type=range]::-ms-thumb:hover {
+  background: #0b72c1;
+}
+.container #paiement > div input[type=range]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+.container #paiement > div input[type=range]::-moz-range-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+.container #paiement > div input[type=range]::-ms-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+.container #paiement > div .inputPrice {
+  display: flex;
+  font-size: 1.1em;
+  align-items: center;
+}
+.container #paiement > div .inputPrice > span {
+  position: absolute;
+  margin-left: 20px;
+  margin-top: -1px;
+}
+.container #paiement > div .inputPrice > input {
+  height: 50px;
+  width: 100%;
+  font-size: 1em;
+  color: #384555;
+  border: 1px solid #e1e8ee;
+  border-radius: 10px;
+  padding-left: 30px;
+}
+.container #paiement > div select {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  height: 50px;
+  width: 100%;
+  font-size: 1em;
+  color: #384555;
+  border: 1px solid #e1e8ee;
+  border-radius: 10px;
+  padding-left: 20px;
+  cursor: pointer;
+  background: url(./assets/angle-sm.svg) 95% center no-repeat, linear-gradient(90deg, #e1e8ee 1px, white 1px) 90% top no-repeat;
+  background-size: 13px;
+  /* Remove IE arrow */
+}
+.container #paiement > div select::-ms-expand {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

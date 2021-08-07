@@ -1,4 +1,131 @@
+@mixin inputThumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: $blue;
+    cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background 0.3s ease-in-out;
+    border: 2px solid #fff;
+}
+
+@mixin inputThumbHover {
+    background: hsl(206, 89%, 40%);
+}
+
+@mixin inputTrack {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+@mixin inputSimple {
+    height: 50px;
+    width: 100%;
+    font-size: 1em;
+    color: #384555;
+    border: 1px solid #e1e8ee;
+    border-radius: 10px;
+}
+
 #paiement {
     grid-area: 3 / 2 / 4 / 3;
     @include divSection;
+
+    & > div {
+        margin-top: 30px;
+
+        label {
+            color: $grey;
+            display: block;
+        }
+
+        input[type='range'] {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            -webkit-appearance: none;
+            margin-right: 15px;
+            width: 100%;
+            height: 7px;
+            background: #e1e8ee;
+            border-radius: 5px;
+            background-image: linear-gradient($blue, $blue);
+            background-size: 70% 100%;
+            background-repeat: no-repeat;
+        }
+
+        /* Input Thumb */
+        input[type='range']::-webkit-slider-thumb {
+            @include inputThumb();
+        }
+        input[type='range']::-moz-range-thumb {
+            @include inputThumb();
+        }
+        input[type='range']::-ms-thumb {
+            @include inputThumb();
+        }
+
+        input[type='range']::-webkit-slider-thumb:hover {
+            @include inputThumbHover();
+        }
+
+        input[type='range']::-moz-range-thumb:hover {
+            @include inputThumbHover();
+        }
+
+        input[type='range']::-ms-thumb:hover {
+            @include inputThumbHover();
+        }
+
+        /* Input Track */
+        input[type='range']::-webkit-slider-runnable-track {
+            @include inputTrack();
+        }
+
+        input[type='range']::-moz-range-track {
+            @include inputTrack();
+        }
+
+        input[type='range']::-ms-track {
+            @include inputTrack();
+        }
+
+        .inputPrice {
+            display: flex;
+            font-size: 1.1em;
+            align-items: center;
+
+            & > span {
+                position: absolute;
+                margin-left: 20px;
+                margin-top: -1px;
+            }
+            & > input {
+                @include inputSimple();
+                padding-left: 30px;
+            }
+        }
+
+        select {
+            /* Reset Select */
+            appearance: none;
+            outline: 0;
+            border: 0;
+            box-shadow: none;
+            /* Personalize */
+            @include inputSimple();
+            padding-left: 20px;
+            cursor: pointer;
+
+            background: url(./assets/angle-sm.svg) 95% center no-repeat, linear-gradient(90deg, #e1e8ee 1px, white 1px) 90% top no-repeat;
+            background-size: 13px;
+
+            /* Remove IE arrow */
+            &::-ms-expand {
+                display: none;
+            }
+        }
+    }
 }
