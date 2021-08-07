@@ -1,0 +1,37 @@
+header {
+    height: 90px;
+    background-color: #ffffff;
+    @include divSpaceBetween;
+    // padding: 20px;
+
+    .left {
+        @include divSpaceBetween;
+
+        h1.logo {
+            padding-left: 20px;
+            font-size: 1.8em;
+            color: #364655;
+            display: flex;
+            width: 180px;
+            @include divCenter;
+        }
+
+        .lang-container {
+            width: 180px;
+
+            .lang {
+                display: none;
+
+                .lang-img {
+                    width: 30px;
+                    padding-left: 10px;
+                }
+
+                &.active {
+                    border-left: 1px solid #e1e8ee;
+                    display: block;
+                }
+            }
+        }
+    }
+}

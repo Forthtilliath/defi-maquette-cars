@@ -1,65 +1,79 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Forth Maquette ABCars</title>
+        <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Forth Maquette Cars</title>
-  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
-</head>
-
-<body>
-  <header>
-    <div class="left">
-      <div class="logo"></div>
-      <div class="lang"></div>
-    </div>
-    <div class="middle">
-      <a href="#">Home</a>
-      <a href="#" class="active">Advantage Search</a>
-      <a href="#">Shop New Cars</a>
-      <a href="#">Reviews & Advice</a>
-      <a href="#">What's My Car Worth?</a>
-    </div>
-    <div class="right">
-      <button>Login</button>
-      <button>Sign up</button>
-    </div>
-  </header>
-  <div class="container">
-    <section id="vehicule">
-      <div class="image"></div>
-      <div class="thumbnails"></div>
-      <div class="specifications"></div>
-      <div class="contact"></div>
-    </section>
-    <section id="description">
-      <div class="title">Ford GT-40<span class="views">(666 Views)</span></div>
-      <div class="tags">
-        <button>Coupe</button>
-        <button>New Vehicle</button>
-        <button>Buy Now</button>
-        <button>Brand Offer</button>
-      </div>
-      <div class="subtitle">Flash McQueen</div>
-      <div class="description">Flash McQueen (Lightning McQueen en version originale (anglaise)) est un personnage de fiction, une voiture rouge apparaissant dans le film Cars. Il est également le héros des jeux vidéo dérivés du film, comme Cars : Quatre Roues ou Cars : La Coupe internationale de Martin. Flash McQueen est interprété dans la version originale par Owen Wilson, dans la version française par Guillaume Canet (parfois remplacé par Éric Legrand et par Axel Kiener pour les courts métrages Cars Toon) et dans la version québécoise par Patrice Dubois.</div>
-      <div class="price"></div>
-      <div class="button"></div>
-    </section>
-    <section id="vendor">
-      <div class="logo"></div>
-      <div class="description"></div>
-      <div class="button"></div>
-    </section>
-    <section id="paiement">
-      <div class="title"></div>
-      <div class="carPrice"></div>
-      <div class="downPaiement"></div>
-      <div class="loanType"></div>
-      <div class="button"></div>
-    </section>
-  </div>
-  <script src="script.js"></script>
-</body>
-
+    <body>
+        <header>
+            <div class="left">
+                <h1 class="logo">ABCars</h1>
+                <div class="lang-container">
+                  <div class="lang active">
+                      <img class="lang-img" src="./assets/en.png" alt="flag-en" />
+                      <span class="lang-title">EN</span>
+                  </div>
+                  <div class="lang">
+                      <img class="lang-img" src="./assets/fr.png" alt="flag-fr" />
+                      <span class="lang-title">FR</span>
+                  </div>
+                </div>
+            </div>
+            <div class="middle">
+                <a href="#">Home</a>
+                <a href="#" class="active">Advantage Search</a>
+                <a href="#">Shop New Cars</a>
+                <a href="#">Reviews & Advice</a>
+                <a href="#">What's My Car Worth?</a>
+            </div>
+            <div class="right">
+                <button>Login</button>
+                <button>Sign up</button>
+            </div>
+        </header>
+        <div class="container">
+            <section id="vehicule">
+                <div class="image"></div>
+                <div class="thumbnails"></div>
+                <div class="specifications"></div>
+                <div class="contact"></div>
+            </section>
+            <section id="description">
+                <div class="title">Ford GT-40<span class="views">(666 Views)</span></div>
+                <div class="tags">
+                    <button>Coupe</button>
+                    <button>New Vehicle</button>
+                    <button>Buy Now</button>
+                    <button>Brand Offer</button>
+                </div>
+                <div class="subtitle">Flash McQueen</div>
+                <div class="description">
+                    Flash McQueen (Lightning McQueen en version originale (anglaise)) est un personnage de fiction, une
+                    voiture rouge apparaissant dans le film Cars. Il est également le héros des jeux vidéo dérivés du
+                    film, comme Cars : Quatre Roues ou Cars : La Coupe internationale de Martin. Flash McQueen est
+                    interprété dans la version originale par Owen Wilson, dans la version française par Guillaume Canet
+                    (parfois remplacé par Éric Legrand et par Axel Kiener pour les courts métrages Cars Toon) et dans la
+                    version québécoise par Patrice Dubois.
+                </div>
+                <div class="price"></div>
+                <div class="button"></div>
+            </section>
+            <section id="vendor">
+                <div class="logo"></div>
+                <div class="description"></div>
+                <div class="button"></div>
+            </section>
+            <section id="paiement">
+                <div class="title"></div>
+                <div class="carPrice"></div>
+                <div class="downPaiement"></div>
+                <div class="loanType"></div>
+                <div class="button"></div>
+            </section>
+        </div>
+        <script src="script.js"></script>
+    </body>
 </html>

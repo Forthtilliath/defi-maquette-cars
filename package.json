@@ -1,0 +1,16 @@
+{
+  "name": "js-scroll-animation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass" : "sass --watch style.scss:style.css",
+    "sass2" : "sass --watch assets/scss/index.scss:style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.35.2"
+  }
+}

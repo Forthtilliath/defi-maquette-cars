@@ -6,43 +6,68 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Noto", sans-serif;
+  background-color: #f5f6f8;
+}
+
 header {
-  height: 30px;
-  background-color: #f2f2f2;
+  height: 90px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .left h1.logo {
+  padding-left: 20px;
+  font-size: 1.8em;
+  color: #364655;
+  display: flex;
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .left .lang-container {
+  width: 180px;
+}
+header .left .lang-container .lang {
+  display: none;
+}
+header .left .lang-container .lang .lang-img {
+  width: 30px;
+  padding-left: 10px;
+}
+header .left .lang-container .lang.active {
+  border-left: 1px solid #e1e8ee;
+  display: block;
 }
 
 .container {
   display: grid;
   grid-template-columns: 1fr 300px;
   grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-gap: 30px;
+  max-width: 1480px;
+  margin: 0 auto;
+}
+.container #vehicule {
+  grid-area: 1/1/4/2;
+  background-color: #f2f2f2;
+}
+.container #description {
+  grid-area: 1/2/2/3;
+}
+.container #vendor {
+  grid-area: 2/2/3/3;
+}
+.container #paiement {
+  grid-area: 3/2/4/3;
 }
 
-/******************************
- * Vehicule                   *
- *****************************/
-#vehicule {
-  grid-area: 1 / 1 / 4 / 2;
-}
-
-/******************************
- * Description                *
- *****************************/
-#description {
-  grid-area: 1 / 2 / 2 / 3;
-}
-
-/******************************
- * Vendor                     *
- *****************************/
-#vendor {
-  grid-area: 2 / 2 / 3 / 3;
-}
-
-/******************************
- * Paiement                   *
- *****************************/
-#paiement {
-  grid-area: 3 / 2 / 4 / 3;
-}
+/*# sourceMappingURL=style.css.map */
