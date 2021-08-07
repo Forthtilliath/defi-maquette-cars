@@ -55,6 +55,35 @@ header .left .lang-container .lang.active .lang-arrow {
   margin-left: 10px;
   width: 13px;
 }
+header .middle {
+  height: 100%;
+}
+header .middle .navMenu {
+  overflow: hidden;
+  height: 100%;
+}
+header .middle .navMenu a {
+  text-decoration: none;
+  float: left;
+  display: block;
+  padding: 35px 10px;
+  height: 100%;
+  color: #8091a5;
+  font-size: 1.1em;
+}
+header .middle .navMenu a.active::after {
+  content: "";
+  display: block;
+  background: #249af4;
+  width: calc(100% + 20px);
+  height: 4px;
+  transform: translateX(-10px) translateY(30px);
+  border-radius: 5px 5px 0 0;
+}
+header .middle .navMenu a + a {
+  margin-left: 20px;
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr 300px;
