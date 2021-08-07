@@ -1,3 +1,35 @@
 #vendor {
     grid-area: 2 / 2 / 3 / 3;
+    @include divSection;
+
+    div + div {
+        padding-top: 20px;
+    }
+
+    .logo {
+        @include divCenter;
+        flex-direction: column;
+
+        & > span {
+            font-size: 0.7em;
+        }
+
+        .stars {
+            & > img {
+                width: 13px;
+                // color: #f68036;
+                filter: invert(55%) sepia(74%) saturate(1022%) hue-rotate(338deg) brightness(101%) contrast(93%);
+            }
+        }
+
+        .stars + span {
+            padding-top: 10px;
+        }
+    }
+
+    .description {
+        line-height: 1.5em;
+        color: $grey;
+        @include maxLines(4);
+    }
 }

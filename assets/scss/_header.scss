@@ -58,7 +58,7 @@ header {
                 display: block;
                 padding: 35px 10px;
                 height: 100%;
-                color: #8091a5;
+                color: $grey;
                 font-size: 1.1em;
 
                 &.active {
@@ -87,17 +87,6 @@ header {
         .button {
             padding: 15px 40px;
             display: inline-block;
-            border-radius: 5px;
-
-            &#btn_login {
-                border: 1px solid #dfe8ef;
-            }
-
-            &#btn_signup {
-                color: #fff;
-                background-color: #249af2;
-                border: 1px solid #249af2;
-            }
 
             + .button {
                 margin-left: 20px;

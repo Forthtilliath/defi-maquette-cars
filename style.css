@@ -29,6 +29,18 @@ body {
   color: #4e5c69;
   background-color: #f3f4f6;
 }
+.button.white {
+  color: #6a747e;
+  background-color: #fff;
+  border: 1px solid #dfe8ef;
+}
+.button.blue {
+  color: #fff;
+  background-color: #249af2;
+}
+.button.auto {
+  width: auto;
+}
 
 header {
   height: 90px;
@@ -107,15 +119,6 @@ header .middle .navMenu a + a {
 header .right .button {
   padding: 15px 40px;
   display: inline-block;
-  border-radius: 5px;
-}
-header .right .button#btn_login {
-  border: 1px solid #dfe8ef;
-}
-header .right .button#btn_signup {
-  color: #fff;
-  background-color: #249af2;
-  border: 1px solid #249af2;
 }
 header .right .button + .button {
   margin-left: 20px;
@@ -127,7 +130,7 @@ header .right .button + .button {
 */
 .navigation {
   height: 100px;
-  max-width: 1480px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 40px 0;
 }
@@ -156,10 +159,10 @@ header .right .button + .button {
 .container {
   display: grid;
   grid-template-columns: 1fr 490px;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
   grid-gap: 30px;
-  max-width: 1480px;
-  margin: 0 auto;
+  max-width: 1400px;
+  margin: 40px auto;
 }
 .container #vehicule {
   grid-area: 1/1/4/2;
@@ -190,6 +193,7 @@ header .right .button + .button {
 }
 .container #description .tags > span {
   padding: 8px 15px;
+  color: #364655;
   background-color: #f3f4f6;
   border-radius: 10px;
 }
@@ -203,9 +207,42 @@ header .right .button + .button {
 }
 .container #vendor {
   grid-area: 2/2/3/3;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+}
+.container #vendor div + div {
+  padding-top: 20px;
+}
+.container #vendor .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container #vendor .logo > span {
+  font-size: 0.7em;
+}
+.container #vendor .logo .stars > img {
+  width: 13px;
+  filter: invert(55%) sepia(74%) saturate(1022%) hue-rotate(338deg) brightness(101%) contrast(93%);
+}
+.container #vendor .logo .stars + span {
+  padding-top: 10px;
+}
+.container #vendor .description {
+  line-height: 1.5em;
+  color: #8091a5;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .container #paiement {
   grid-area: 3/2/4/3;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */

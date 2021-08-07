@@ -1,9 +1,6 @@
 #description {
     grid-area: 1 / 2 / 2 / 3;
-
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 30px;
+    @include divSection;
 
     & > * + * {
         margin-top: 10px;
@@ -17,7 +14,7 @@
             font-size: 0.6em;
             font-weight: normal;
             margin-left: 5px;
-            color:#8091a5;
+            color:$grey;
         }
     }
 
@@ -27,6 +24,7 @@
 
         & > span {
             padding: 8px 15px;
+            color:#364655;
             background-color: #f3f4f6;
             border-radius: 10px;
         }

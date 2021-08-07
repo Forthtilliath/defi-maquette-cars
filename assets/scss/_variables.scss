@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+$grey: #8091a5;
+
 *,
 ::before,
 ::after {
@@ -24,20 +26,48 @@ body {
     align-items: center;
 }
 
+@mixin divSection {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+@mixin maxLines($nbLines:1) {
+    display: -webkit-box;
+    -webkit-line-clamp: $nbLines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 .button {
     width: 100%;
-    height:50px;
+    height: 50px;
     border-radius: 10px;
     @include divCenter;
     cursor: pointer;
 
     &.primary {
-        color:#fff;
+        color: #fff;
         background-color: #16d762;
     }
 
     &.secondary {
-        color:#4e5c69;
+        color: #4e5c69;
         background-color: #f3f4f6;
+    }
+
+    &.white {
+        color: #6a747e;
+        background-color: #fff;
+        border: 1px solid #dfe8ef;
+    }
+
+    &.blue {
+        color: #fff;
+        background-color: #249af2;
+    }
+
+    &.auto {
+        width: auto;
     }
 }
