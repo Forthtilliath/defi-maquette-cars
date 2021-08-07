@@ -359,7 +359,7 @@ header .right .button + .button {
   border-radius: 10px;
   padding-left: 20px;
   cursor: pointer;
-  background: url(./assets/angle-sm.svg) 95% center no-repeat, linear-gradient(90deg, #e1e8ee 1px, white 1px) 90% top no-repeat;
+  background: url(./assets/double-angle-sm.svg) 95% center no-repeat, linear-gradient(90deg, #e1e8ee 1px, white 1px) 90% top no-repeat;
   background-size: 13px;
   /* Remove IE arrow */
 }
