@@ -1,0 +1,31 @@
+.navigation {
+    height: 100px;
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 40px 0;
+
+    a {
+        text-decoration: none;
+        color: #8d9dad;
+        font-size: 1.1em;;
+
+        & + a::before {
+            content: '';
+            background-image: url(./assets/angle-sm.svg);
+            background-size: contain;
+            display: inline-block;
+            width: 13px;
+            margin-left: 20px;
+            margin-right: 20px;
+            height: 100%;
+            background-repeat: no-repeat;
+            transform: rotate(-90deg) translate(-4px, 5px);
+            // insane generator : https://codepen.io/sosuke/pen/Pjoqqp
+            filter: invert(68%) sepia(22%) saturate(234%) hue-rotate(169deg) brightness(86%) contrast(95%);
+        }
+
+        &:last-child {
+            color: #249af2;
+        }
+    }
+}

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 *,
 ::before,
 ::after {
@@ -7,7 +8,7 @@
 }
 
 body {
-  font-family: "Noto", sans-serif;
+  font-family: "Lato", sans-serif;
   background-color: #f5f6f8;
 }
 
@@ -17,6 +18,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 40px;
 }
 header .left {
   display: flex;
@@ -27,11 +29,7 @@ header .left {
 header .left h1.logo {
   font-size: 1.8em;
   display: flex;
-  width: 180px;
-  padding-left: 36px;
-}
-header .left .lang-container {
-  width: 180px;
+  width: 140px;
 }
 header .left .lang-container .lang {
   display: none;
@@ -44,6 +42,7 @@ header .left .lang-container .lang .lang-img {
 }
 header .left .lang-container .lang .lang-title {
   margin-left: 10px;
+  font-size: 1.1em;
 }
 header .left .lang-container .lang.active {
   border-left: 1px solid #e1e8ee;
@@ -71,6 +70,10 @@ header .middle .navMenu a {
   color: #8091a5;
   font-size: 1.1em;
 }
+header .middle .navMenu a.active {
+  color: #364655;
+  font-weight: bold;
+}
 header .middle .navMenu a.active::after {
   content: "";
   display: block;
@@ -83,10 +86,58 @@ header .middle .navMenu a.active::after {
 header .middle .navMenu a + a {
   margin-left: 20px;
 }
+header .right .button {
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 5px;
+}
+header .right .button#btn_login {
+  border: 1px solid #dfe8ef;
+}
+header .right .button#btn_signup {
+  color: #fff;
+  background-color: #249af2;
+  border: 1px solid #249af2;
+}
+header .right .button + .button {
+  margin-left: 20px;
+}
+
+/* 
+    Breakpoint menu 1500px
+        Passer le block middle en dessous
+*/
+.navigation {
+  height: 100px;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+.navigation a {
+  text-decoration: none;
+  color: #8d9dad;
+  font-size: 1.1em;
+}
+.navigation a + a::before {
+  content: "";
+  background-image: url(./assets/angle-sm.svg);
+  background-size: contain;
+  display: inline-block;
+  width: 13px;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 100%;
+  background-repeat: no-repeat;
+  transform: rotate(-90deg) translate(-4px, 5px);
+  filter: invert(68%) sepia(22%) saturate(234%) hue-rotate(169deg) brightness(86%) contrast(95%);
+}
+.navigation a:last-child {
+  color: #249af2;
+}
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr 500px;
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 30px;
   max-width: 1480px;
@@ -98,6 +149,20 @@ header .middle .navMenu a + a {
 }
 .container #description {
   grid-area: 1/2/2/3;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+}
+.container #description h2.title {
+  color: #374454;
+}
+.container #description h2.title > span {
+  font-size: 0.6em;
+  font-weight: normal;
+  margin-left: 5px;
+}
+.container #description > * {
+  margin-top: 10px;
 }
 .container #vendor {
   grid-area: 2/2/3/3;

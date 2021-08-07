@@ -1,3 +1,21 @@
 #description {
     grid-area: 1 / 2 / 2 / 3;
+
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+
+    h2.title {
+        color: #374454;
+
+        & > span {
+            font-size: 0.6em;
+            font-weight: normal;
+            margin-left: 5px;
+        }
+    }
+
+    & > * {
+        margin-top: 10px;
+    }
 }
