@@ -22,16 +22,13 @@ header .left {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #364655;
 }
 header .left h1.logo {
-  padding-left: 20px;
   font-size: 1.8em;
-  color: #364655;
   display: flex;
   width: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-left: 36px;
 }
 header .left .lang-container {
   width: 180px;
@@ -41,13 +38,23 @@ header .left .lang-container .lang {
 }
 header .left .lang-container .lang .lang-img {
   width: 30px;
-  padding-left: 10px;
+  margin-left: 20px;
+  filter: brightness(1.4);
+  border-radius: 10%;
+}
+header .left .lang-container .lang .lang-title {
+  margin-left: 10px;
 }
 header .left .lang-container .lang.active {
   border-left: 1px solid #e1e8ee;
-  display: block;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
-
+header .left .lang-container .lang.active .lang-arrow {
+  margin-left: 10px;
+  width: 13px;
+}
 .container {
   display: grid;
   grid-template-columns: 1fr 300px;

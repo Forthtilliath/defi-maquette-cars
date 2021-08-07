@@ -6,14 +6,14 @@ header {
 
     .left {
         @include divSpaceBetween;
+        color: #364655;
 
         h1.logo {
-            padding-left: 20px;
             font-size: 1.8em;
-            color: #364655;
             display: flex;
             width: 180px;
-            @include divCenter;
+            // @include divCenter;
+            padding-left: 36px;
         }
 
         .lang-container {
@@ -24,14 +24,32 @@ header {
 
                 .lang-img {
                     width: 30px;
-                    padding-left: 10px;
+                    margin-left: 20px;
+                    filter: brightness(1.4);
+                    border-radius: 10%;
+                }
+
+                .lang-title {
+                    margin-left: 10px;
                 }
 
                 &.active {
                     border-left: 1px solid #e1e8ee;
-                    display: block;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+
+                    .lang-arrow {
+                        margin-left: 10px;
+                        width: 13px;
+                        // transform: rotate(-90deg);
+                    }
                 }
             }
         }
+    }
+
+    .middle {
+
     }
 }
