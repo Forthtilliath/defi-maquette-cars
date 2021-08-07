@@ -24,3 +24,20 @@ body {
     align-items: center;
 }
 
+.button {
+    width: 100%;
+    height:50px;
+    border-radius: 10px;
+    @include divCenter;
+    cursor: pointer;
+
+    &.primary {
+        color:#fff;
+        background-color: #16d762;
+    }
+
+    &.secondary {
+        color:#4e5c69;
+        background-color: #f3f4f6;
+    }
+}

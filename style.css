@@ -12,6 +12,24 @@ body {
   background-color: #f5f6f8;
 }
 
+.button {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.button.primary {
+  color: #fff;
+  background-color: #16d762;
+}
+.button.secondary {
+  color: #4e5c69;
+  background-color: #f3f4f6;
+}
+
 header {
   height: 90px;
   background-color: #ffffff;
@@ -137,7 +155,7 @@ header .right .button + .button {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 500px;
+  grid-template-columns: 1fr 490px;
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 30px;
   max-width: 1480px;
@@ -153,16 +171,35 @@ header .right .button + .button {
   border-radius: 10px;
   padding: 30px;
 }
+.container #description > * + * {
+  margin-top: 10px;
+}
 .container #description h2.title {
   color: #374454;
+  font-size: 1.6em;
 }
 .container #description h2.title > span {
   font-size: 0.6em;
   font-weight: normal;
   margin-left: 5px;
+  color: #8091a5;
 }
-.container #description > * {
-  margin-top: 10px;
+.container #description .tags {
+  display: flex;
+  justify-content: space-between;
+}
+.container #description .tags > span {
+  padding: 8px 15px;
+  background-color: #f3f4f6;
+  border-radius: 10px;
+}
+.container #description h3.subtitle {
+  color: #2399f3;
+  margin-top: 20px;
+}
+.container #description .description {
+  color: #8090a7;
+  line-height: 1.5em;
 }
 .container #vendor {
   grid-area: 2/2/3/3;
