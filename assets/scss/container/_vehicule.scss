@@ -1,4 +1,4 @@
-$images: '0.jpg', '1.png', '2.png', '3.jpg', '4.jpg', '5.jpeg', '6.jpg', '7.jpeg';
+// $images: '0.jpg', '1.png', '2.png', '3.jpg', '4.jpg', '5.jpeg', '6.jpg', '7.jpeg';
 
 #vehicule {
     grid-area: 1 / 1 / 4 / 2;
@@ -10,7 +10,7 @@ $images: '0.jpg', '1.png', '2.png', '3.jpg', '4.jpg', '5.jpeg', '6.jpg', '7.jpeg
 
     .image {
         height: 520px;
-        background: url('./assets/car/0.jpg') center/cover;
+        // background: url('./assets/car/0.jpg') center/cover;
         border-radius: 10px 10px 0 0;
     }
 
@@ -25,12 +25,11 @@ $images: '0.jpg', '1.png', '2.png', '3.jpg', '4.jpg', '5.jpeg', '6.jpg', '7.jpeg
         border-radius: 10px 10px 0 0;
 
         .mySlide {
-            // display: none;
-
             height: 520px;
             border-radius: 10px 10px 0 0;
             background-position: center;
             background-size: cover;
+            transition: opacity 0.2s ease;
         }
 
         /* Next & previous buttons */
@@ -67,17 +66,27 @@ $images: '0.jpg', '1.png', '2.png', '3.jpg', '4.jpg', '5.jpeg', '6.jpg', '7.jpeg
         display: flex;
         justify-content: space-between;
 
-        @for $i from 2 through length($images) {
-            $image: nth($images, $i);
-            .img:nth-child(#{$i - 1}) {
-                height: 108px;
-                width: 19%;
-                background-color: bisque;
-                background: url('./assets/car/' + $image) center/cover;
-                cursor: pointer;
-                border-radius: 10px;
-            }
+        .img {
+            height: 108px;
+            width: 19%;
+            background-position: center;
+            background-size: cover;
+            cursor: pointer;
+            border-radius: 10px;
         }
+
+        // @for $i from 2 through length($images) {
+        //     $image: nth($images, $i);
+        //     .img:nth-child(#{$i - 1}) {
+        //         height: 108px;
+        //         width: 19%;
+        //         background: url('./assets/car/' + $image) center/cover;
+        //         background-position: center;
+        //         background-size: cover;
+        //         cursor: pointer;
+        //         border-radius: 10px;
+        //     }
+        // }
     }
 
     .specifications {

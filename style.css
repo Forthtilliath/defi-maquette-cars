@@ -177,7 +177,6 @@ header .right .button + .button {
 }
 .container #vehicule .image {
   height: 520px;
-  background: url("./assets/car/0.jpg") center/cover;
   border-radius: 10px 10px 0 0;
 }
 .container #vehicule .slideshow-container {
@@ -195,6 +194,7 @@ header .right .button + .button {
   border-radius: 10px 10px 0 0;
   background-position: center;
   background-size: cover;
+  transition: opacity 0.2s ease;
 }
 .container #vehicule .slideshow-container .prev,
 .container #vehicule .slideshow-container .next {
@@ -225,59 +225,11 @@ header .right .button + .button {
   display: flex;
   justify-content: space-between;
 }
-.container #vehicule .thumbnails .img:nth-child(1) {
+.container #vehicule .thumbnails .img {
   height: 108px;
   width: 19%;
-  background-color: bisque;
-  background: url("./assets/car/1.png") center/cover;
-  cursor: pointer;
-  border-radius: 10px;
-}
-.container #vehicule .thumbnails .img:nth-child(2) {
-  height: 108px;
-  width: 19%;
-  background-color: bisque;
-  background: url("./assets/car/2.png") center/cover;
-  cursor: pointer;
-  border-radius: 10px;
-}
-.container #vehicule .thumbnails .img:nth-child(3) {
-  height: 108px;
-  width: 19%;
-  background-color: bisque;
-  background: url("./assets/car/3.jpg") center/cover;
-  cursor: pointer;
-  border-radius: 10px;
-}
-.container #vehicule .thumbnails .img:nth-child(4) {
-  height: 108px;
-  width: 19%;
-  background-color: bisque;
-  background: url("./assets/car/4.jpg") center/cover;
-  cursor: pointer;
-  border-radius: 10px;
-}
-.container #vehicule .thumbnails .img:nth-child(5) {
-  height: 108px;
-  width: 19%;
-  background-color: bisque;
-  background: url("./assets/car/5.jpeg") center/cover;
-  cursor: pointer;
-  border-radius: 10px;
-}
-.container #vehicule .thumbnails .img:nth-child(6) {
-  height: 108px;
-  width: 19%;
-  background-color: bisque;
-  background: url("./assets/car/6.jpg") center/cover;
-  cursor: pointer;
-  border-radius: 10px;
-}
-.container #vehicule .thumbnails .img:nth-child(7) {
-  height: 108px;
-  width: 19%;
-  background-color: bisque;
-  background: url("./assets/car/7.jpeg") center/cover;
+  background-position: center;
+  background-size: cover;
   cursor: pointer;
   border-radius: 10px;
 }

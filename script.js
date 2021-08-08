@@ -6,6 +6,7 @@ const currencyInputs = document.querySelectorAll("input[data-type='currency']");
 const slideshowContainer = document.querySelector('#slideshow');
 const btn_prev = document.querySelector('#btn_prev');
 const btn_next = document.querySelector('#btn_next');
+const thumbnailsContainer = document.querySelector('.thumbnails');
 
 // Création des evenements
 window.onload = () => {
@@ -119,29 +120,68 @@ function getClosestInput(input) {
  * Slideshow                            *
  ****************************************/
 
+/** Index du diaporama */
 let currentIndex = 1;
+/** Chemin des images */
 const path = './assets/car/';
+/** Nom des images */
 const imageNames = ['0.jpg', '1.png', '2.png', '3.jpg', '4.jpg', '5.jpeg', '6.jpg', '7.jpeg'];
+const nbThumbnail = 5;
 
 createSlideshow();
 const slideshow = slideshowContainer.querySelectorAll('.mySlide');
 showSlides(0);
+createThumbnails();
+const thumbnails = thumbnailsContainer.querySelectorAll('.img');
 
+/**
+ * Génère le diaporama à partir d'imageNames
+ */
 function createSlideshow() {
-    imageNames.forEach(imageName => {
-        const div = document.createElement('div');
-        div.classList.add('mySlide');
-        div.style.backgroundImage = `url('${path}${imageName}')`;
-        slideshowContainer.insertAdjacentElement('beforeend', div);
+    let url = '';
+    imageNames.forEach((imageName) => {
+        url = path + imageName;
+        slideshowContainer.insertAdjacentElement('beforeend', utils.createDivImage(url, 'mySlide'));
+        utils.preloadImage(url);
     });
 }
 
 /**
- * 
+ * Génère les vignettes
+ */
+function createThumbnails() {
+    const thumbnailNames = imageNames.slice(1, nbThumbnail + 1);
+    let url = '';
+    let divToAdd = null;
+    thumbnailNames.forEach((imageName, i) => {
+        url = path + imageName;
+        divToAdd = utils.createDivImage(url, 'img');
+        thumbnailsContainer.insertAdjacentElement('beforeend', divToAdd);
+        // Ajoute un evenement pour afficher l'image en cliquant sur la vignette
+        divToAdd.addEventListener('click', () => plusSlides(i + 1));
+    });
+}
+
+/**
+ * Met à jour les vignettes
+ * @param {Number} startIndex
+ */
+function updateThumbnails(startIndex) {
+    // Génère un double tableau pour avoir un systeme de tableau infini
+    // Il faut juste que le nouveau tableau ait plus d'éléments que le nombre de vignettes
+    const thumbnailNames = [...imageNames, ...imageNames].slice(startIndex, nbThumbnail + startIndex);
+    thumbnails.forEach((thumbnail, index) => {
+        thumbnail.style.backgroundImage = `url('${path}${thumbnailNames[index]}')`;
+    });
+}
+
+/**
+ * Décale les photos du diaporama
  * @param {Number} n Nombre de photos à décaler
  */
 function plusSlides(n) {
     showSlides(currentIndex + n);
+    updateThumbnails(utils.getIndex(currentIndex + 1, slideshow.length));
 }
 
 /**
@@ -149,8 +189,7 @@ function plusSlides(n) {
  * @param {Number} n Photo à afficher
  */
 function showSlides(n) {
-    currentIndex = (n + slideshow.length) % slideshow.length;
-
+    currentIndex = utils.getIndex(n, slideshow.length);
     slideshow.forEach((image) => (image.style.display = 'none'));
     slideshow[currentIndex].style.display = 'block';
 }
