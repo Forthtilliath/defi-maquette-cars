@@ -1,6 +1,13 @@
+import * as utils from './utils.js';
+
 const rangeInputs = document.querySelectorAll('input[type="range"]');
 const currencyInputs = document.querySelectorAll("input[data-type='currency']");
 
+const slideshow = document.querySelectorAll('.mySlide');
+const btn_prev = document.querySelector('#btn_prev');
+const btn_next = document.querySelector('#btn_next');
+
+// Création des evenements
 window.onload = () => {
     rangeInputs.forEach((input) => {
         handleInputChange(input);
@@ -22,8 +29,11 @@ currencyInputs.forEach((input) => {
     });
 });
 
+btn_prev.addEventListener('click', () => plusSlides(-1));
+btn_next.addEventListener('click', () => plusSlides(1));
+
 /****************************************
- * Input range                          *
+ * Paiement                             *
  ****************************************/
 
 /**
@@ -39,32 +49,6 @@ function handleInputChange(target) {
 }
 
 /**
- * Retourne le champ Range correspondant au champ currency
- * @param {HTMLInputElement} input
- * @returns {HTMLInputElement}
- */
-function getClosestRange(input) {
-    return input.closest('#paiement > div').querySelector('input[type="range"]');
-}
-
-/**
- * Met à jour la valeur du champ range à partir du champ input
- * @param {HTMLInputElement} inputCurrency
- */
-function setRange(inputCurrency) {
-    const inputRange = getClosestRange(inputCurrency);
-    inputRange.value = formatInputToNumber(inputCurrency.value);
-    handleInputChange(inputRange);
-}
-
-function getClosestInput(input) {
-    return (
-        input.closest('#paiement > div').querySelector('input[type="text"]') ||
-        input.closest('#paiement > div').querySelector('select')
-    );
-}
-
-/**
  * Met à jour la valeur du champ input à partir du champ range
  * @param {HTMLInputElement} inputRange
  */
@@ -75,32 +59,6 @@ function setCurrency(inputRange) {
     if (input.getAttribute('data-type') === 'currency') {
         formatCurrency(input);
     }
-}
-
-/****************************************
- * Input currency                       *
- ****************************************/
-
-/**
- * Ajoute des points pour les milliers
- * @param {String} n
- * @returns {String}
- */
-function formatNumber(n) {
-    // format number 1000000 to 1.234.567
-    return n.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-}
-
-/**
- * Convertit la valeur du champ en nombre (retire les points et les 0 inutiles)
- * @param {String} n
- * @returns {Number}
- */
-function formatInputToNumber(n) {
-    // format number 1.000.000 to 1234567
-    let nWithoutPoint = n.replace('.', '');
-    let nNumber = parseInt(nWithoutPoint, 10);
-    return nNumber;
 }
 
 /**
@@ -116,12 +74,66 @@ function formatCurrency(input) {
     // position du curseur
     let caret_pos = input.selectionStart;
 
-    // met à jour la valeur dans le champ
-    input.value = formatNumber(formatInputToNumber(input.value).toString());
+    // met à jour la valeur dans le champ dans le format souhaité
+    input.value = utils.formatNumber(utils.formatInputToNumber(input.value).toString());
 
     // repositionne le curseur
     let updated_len = input.value.length;
     caret_pos = updated_len - original_len + caret_pos;
 
     input.setSelectionRange(caret_pos, caret_pos);
+}
+
+/**
+ * Met à jour la valeur du champ range à partir du champ input
+ * @param {HTMLInputElement} inputCurrency
+ */
+function setRange(inputCurrency) {
+    const inputRange = getClosestRange(inputCurrency);
+    inputRange.value = utils.formatInputToNumber(inputCurrency.value);
+    handleInputChange(inputRange);
+}
+
+/**
+ * Retourne le champ Range correspondant au champ currency
+ * @param {HTMLInputElement} input Range
+ * @returns {HTMLInputElement}
+ */
+function getClosestRange(input) {
+    return input.closest('#paiement > div').querySelector('input[type="range"]');
+}
+
+/**
+ * Retourne le champ Range correspondant au champ currency
+ * @param {HTMLInputElement} input Input currency
+ * @returns {HTMLInputElement}
+ */
+function getClosestInput(input) {
+    return (
+        input.closest('#paiement > div').querySelector("input[data-type='currency']") ||
+        input.closest('#paiement > div').querySelector('select')
+    );
+}
+
+/****************************************
+ * Slideshow                            *
+ ****************************************/
+
+let currentIndex = 1;
+showSlides(0);
+
+function plusSlides(n) {
+    showSlides((currentIndex + n));
+}
+
+/**
+ * 
+ * @param {Number} n Photo à afficher
+ */
+function showSlides(n) {
+    // x représente les photos du slideshow
+    currentIndex = (n + slideshow.length) % slideshow.length;
+
+    slideshow.forEach((image) => (image.style.display = 'none'));
+    slideshow[currentIndex].style.display = 'block';
 }
