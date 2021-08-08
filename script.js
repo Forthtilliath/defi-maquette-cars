@@ -125,7 +125,7 @@ let currentIndex = 1;
 /** Chemin des images */
 const path = './assets/car/';
 /** Nom des images */
-const imageNames = ['0.jpg', '1.png', '2.png', '3.jpg', '4.jpg', '5.jpeg', '6.jpg', '7.jpeg'];
+const imageNames = ['0.jpg', '1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg'];
 const nbThumbnail = 5;
 
 createSlideshow();
