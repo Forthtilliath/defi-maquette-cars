@@ -3,7 +3,7 @@ import * as utils from './utils.js';
 const rangeInputs = document.querySelectorAll('input[type="range"]');
 const currencyInputs = document.querySelectorAll("input[data-type='currency']");
 
-const slideshow = document.querySelectorAll('.mySlide');
+const slideshowContainer = document.querySelector('#slideshow');
 const btn_prev = document.querySelector('#btn_prev');
 const btn_next = document.querySelector('#btn_next');
 
@@ -120,18 +120,36 @@ function getClosestInput(input) {
  ****************************************/
 
 let currentIndex = 1;
-showSlides(0);
+const path = './assets/car/';
+const imageNames = ['0.jpg', '1.png', '2.png', '3.jpg', '4.jpg', '5.jpeg', '6.jpg', '7.jpeg'];
 
-function plusSlides(n) {
-    showSlides((currentIndex + n));
+createSlideshow();
+const slideshow = slideshowContainer.querySelectorAll('.mySlide');
+
+function createSlideshow() {
+    imageNames.forEach(imageName => {
+        const div = document.createElement('div');
+        div.classList.add('mySlide');
+        div.style.backgroundImage = `url('${path}${imageName}')`;
+        slideshowContainer.insertAdjacentElement('afterbegin', div);
+    });
 }
+
+showSlides(0);
 
 /**
  * 
+ * @param {Number} n Nombre de photos à décaler
+ */
+function plusSlides(n) {
+    showSlides(currentIndex + n);
+}
+
+/**
+ * Modifie la photo affichée
  * @param {Number} n Photo à afficher
  */
 function showSlides(n) {
-    // x représente les photos du slideshow
     currentIndex = (n + slideshow.length) % slideshow.length;
 
     slideshow.forEach((image) => (image.style.display = 'none'));
