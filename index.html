@@ -1,14 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
         <title>Forth Maquette ABCars</title>
         <link rel="stylesheet" href="style.css" type="text/css" media="all" />
     </head>
 
     <body>
+        <!-- Importation du svg pour pouvoir le manipuler plus facilement par la suite (il est caché grace à height à 0) -->
+        <!-- <svg height="0" style="display: block"> -->
+        <!-- Importation du svg pour pouvoir le manipuler plus facilement par la suite -->
+        <svg style="display: none">
+            <symbol id="svg-arrow" viewBox="0 0 110 63" fill="none">
+                <path
+                    d="M8 8L54.2929 54.2929C54.6834 54.6834 55.3166 54.6834 55.7071 54.2929L102 8"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                />
+            </symbol>
+        </svg>
+
         <header>
             <div class="left">
                 <h1 class="logo">ABCars</h1>
@@ -16,7 +30,10 @@
                     <div class="lang active">
                         <img class="lang-img" src="./assets/en.png" alt="flag-en" />
                         <span class="lang-title">EN</span>
-                        <img class="lang-arrow" src="./assets/angle-sm.svg" alt="arrow" />
+                        <!-- <img class="lang-arrow" src="./assets/angle-sm.svg" alt="arrow" /> -->
+                        <svg class="lang-arrow">
+                            <use xlink:href="#svg-arrow" />
+                        </svg>
                     </div>
                     <div class="lang">
                         <img class="lang-img" src="./assets/fr.png" alt="flag-fr" />
@@ -49,8 +66,16 @@
         <div class="container">
             <section id="vehicule">
                 <div class="slideshow-container" id="slideshow">
-                    <a class="prev" id="btn_prev">&#10094;</a>
-                    <a class="next" id="btn_next">&#10095;</a>
+                    <a class="prev" id="btn_prev">
+                        <svg class="left-arrow">
+                            <use xlink:href="#svg-arrow" />
+                        </svg>
+                    </a>
+                    <a class="next" id="btn_next">
+                        <svg class="right-arrow">
+                            <use xlink:href="#svg-arrow" />
+                        </svg>
+                    </a>
                 </div>
                 <div class="thumbnails"></div>
                 <div class="specifications">
@@ -142,7 +167,7 @@
 
             <section id="vendor">
                 <div class="logo">
-                    <img src="./assets/gnl2.png" alt="logo-gnl" />
+                    <img src="./assets/gnl.png" alt="logo-gnl" />
                     <span>Certified Dealer</span>
                     <div class="stars">
                         <img src="./assets/star.svg" alt="star" />

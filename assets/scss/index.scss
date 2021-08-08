@@ -1,4 +1,6 @@
-@import './variables';
+@import './project/variables';
+@import './project/mixins';
+@import './project/globals';
 @import './header';
 @import './navigation';
 @import './container';

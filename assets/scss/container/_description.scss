@@ -11,7 +11,7 @@
             font-size: 0.6em;
             font-weight: normal;
             margin-left: 5px;
-            color:$grey;
+            color: $grey;
         }
     }
 
@@ -21,19 +21,19 @@
 
         & > span {
             padding: 8px 15px;
-            color:#364655;
-            background-color: #f3f4f6;
+            color: $blue-gray-200;
+            background-color: $gray-150;
             border-radius: 10px;
         }
     }
 
     h3.subtitle {
-        color:#2399f3;
+        color: $blue;
         margin-top: 20px;
     }
 
     .description {
-        color: #8090a7;
+        color: $blue-gray;
         line-height: 1.5em;
     }
 }

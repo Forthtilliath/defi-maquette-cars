@@ -1,0 +1,23 @@
+@mixin divCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin divSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin divSection {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+@mixin maxLines($nbLines: 1) {
+    display: -webkit-box;
+    -webkit-line-clamp: $nbLines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

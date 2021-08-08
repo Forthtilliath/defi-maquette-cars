@@ -1,12 +1,12 @@
 header {
     height: 90px;
-    background-color: #ffffff;
+    background-color: $white;
     @include divSpaceBetween;
     padding: 0 40px;
 
     .left {
         @include divSpaceBetween;
-        color: #364655;
+        color: $blue-gray-200;
 
         h1.logo {
             font-size: 1.8em;
@@ -31,7 +31,7 @@ header {
                 }
 
                 &.active {
-                    border-left: 1px solid #e1e8ee;
+                    border-left: 1px solid $gray-300;
                     display: flex;
                     align-items: center;
                     cursor: pointer;
@@ -39,6 +39,9 @@ header {
                     .lang-arrow {
                         margin-left: 10px;
                         width: 13px;
+                        // Avec le svg, la bordure left prend une grosse taille sinon
+                        height: 1.1em;
+                        stroke-width: 15;
                     }
                 }
             }
@@ -62,13 +65,13 @@ header {
                 font-size: 1.1em;
 
                 &.active {
-                    color: #364655;
+                    color: $blue-gray-200;
                     font-weight: bold;
 
                     &::after {
                         content: '';
                         display: block;
-                        background: #249af4;
+                        background: $blue;
                         width: calc(100% + 20px);
                         height: 4px;
                         transform: translateX(-10px) translateY(30px);

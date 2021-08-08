@@ -17,7 +17,6 @@
         .stars {
             & > img {
                 width: 13px;
-                // color: #f68036;
                 filter: invert(55%) sepia(74%) saturate(1022%) hue-rotate(338deg) brightness(101%) contrast(93%);
             }
         }
