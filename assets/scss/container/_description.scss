@@ -1,5 +1,4 @@
 #description {
-    grid-area: 1 / 2 / 2 / 3;
     @include divSection;
 
     & > * + * {
@@ -39,5 +38,12 @@
 
     .button {
         font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #description .tags {
+        flex-wrap: wrap;
+        gap: 10px;
     }
 }

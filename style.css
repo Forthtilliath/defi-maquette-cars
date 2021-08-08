@@ -28,7 +28,7 @@ body {
 .button.secondary {
   color: #4e5c6a;
   color: #6d757e;
-  background-color: #f9fafb;
+  background-color: #eaedf0;
 }
 .button.white {
   color: #6d757e;
@@ -306,32 +306,32 @@ header .right {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr minmax(250px, 490px);
-  grid-template-rows: repeat(3, auto);
-  grid-gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
   max-width: 1480px;
   margin: 0 30px 40px;
 }
-.container #vehicule {
-  grid-area: 1/1/4/2;
+.container #vehicle {
   background-color: white;
+  width: calc(100% - 490px - 30px);
 }
-.container #vehicule > div + div {
+.container #vehicle > div + div {
   padding: 25px;
 }
-.container #vehicule .slideshow-container {
+.container #vehicle .slideshow-container {
   position: relative;
 }
-.container #vehicule .slideshow-container .mySlide {
+.container #vehicle .slideshow-container .mySlide {
   height: 520px;
   border-radius: 10px 10px 0 0;
   background-position: center;
   background-size: cover;
   transition: opacity 0.2s ease;
 }
-.container #vehicule .slideshow-container .prev,
-.container #vehicule .slideshow-container .next {
+.container #vehicle .slideshow-container .prev,
+.container #vehicle .slideshow-container .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -345,8 +345,8 @@ header .right {
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
-.container #vehicule .slideshow-container .prev svg,
-.container #vehicule .slideshow-container .next svg {
+.container #vehicle .slideshow-container .prev svg,
+.container #vehicle .slideshow-container .next svg {
   width: 13px;
   stroke-width: 25;
   height: 22px;
@@ -354,35 +354,36 @@ header .right {
   justify-content: center;
   align-items: center;
 }
-.container #vehicule .slideshow-container .prev:hover,
-.container #vehicule .slideshow-container .next:hover {
+.container #vehicle .slideshow-container .prev:hover,
+.container #vehicle .slideshow-container .next:hover {
   background-color: #f9fafb;
   color: black;
 }
-.container #vehicule .slideshow-container .next {
+.container #vehicle .slideshow-container .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
-.container #vehicule .thumbnails {
+.container #vehicle .thumbnails {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
-.container #vehicule .thumbnails .img {
+.container #vehicle .thumbnails .img {
   height: 108px;
-  width: 19%;
+  width: 100%;
   background-position: center;
   background-size: cover;
   cursor: pointer;
   border-radius: 10px;
 }
-.container #vehicule .specifications .specifications-list {
+.container #vehicle .specifications .specifications-list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.container #vehicule .specifications .specifications-list .specification {
+.container #vehicle .specifications .specifications-list .specification {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -391,37 +392,37 @@ header .right {
   padding: 30px 0;
   border-bottom: 1px solid #dfe3e7;
 }
-.container #vehicule .specifications .specifications-list .specification .title {
+.container #vehicle .specifications .specifications-list .specification .title {
   color: #8091a5;
 }
-.container #vehicule .contact .form {
+.container #vehicle .contact .form {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.container #vehicule .contact .form .input {
+.container #vehicle .contact .form .input {
   width: calc(50% - 30px / 2);
   margin-top: 30px;
 }
-.container #vehicule .contact .form .input input {
+.container #vehicle .contact .form .input input {
   height: 50px;
 }
-.container #vehicule .contact .form .textarea {
+.container #vehicle .contact .form .textarea {
   width: 100%;
   margin-top: 30px;
 }
-.container #vehicule .contact .form .textarea textarea {
+.container #vehicle .contact .form .textarea textarea {
   height: 180px;
 }
-.container #vehicule .contact .form label {
+.container #vehicle .contact .form label {
   width: 100%;
   color: #8091a5;
   margin-top: 30px;
 }
-.container #vehicule .contact .form input,
-.container #vehicule .contact .form textarea {
+.container #vehicle .contact .form input,
+.container #vehicle .contact .form textarea {
   font-family: "Lato", sans-serif;
   width: 100%;
   border: 1px solid #dfe3e7;
@@ -430,11 +431,52 @@ header .right {
   font-size: 1.1em;
   padding: 15px;
 }
+@media screen and (max-width: 1200px) {
+  .container #vehicle {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container #vehicle .specifications .specifications-list .specification {
+    width: 100%;
+  }
+  .container #vehicle .contact .form .input {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container #vehicle .thumbnails .img:last-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 400px) {
+  .container #vehicle .thumbnails {
+    flex-wrap: wrap;
+  }
+  .container #vehicle .thumbnails .img {
+    width: calc(50% - 5px);
+  }
+}
+@media screen and (max-width: 400px) {
+  .container #vehicle > div + div {
+    padding: 10px 0;
+  }
+  .container #vehicle .slideshow-container .mySlide {
+    height: 200px;
+  }
+  .container #vehicle .thumbnails .img {
+    width: 100%;
+  }
+  .container #vehicle .thumbnails .img:last-child {
+    display: block;
+  }
+}
 .container #description {
-  grid-area: 1/2/2/3;
   background-color: #fff;
   border-radius: 10px;
   padding: 30px;
+  width: 490px;
+  width: 100%;
 }
 .container #description > * + * {
   margin-top: 10px;
@@ -466,11 +508,18 @@ header .right {
 .container #description .button {
   font-size: 1.2em;
 }
+@media screen and (max-width: 600px) {
+  .container #description .tags {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
 .container #vendor {
-  grid-area: 2/2/3/3;
   background-color: #fff;
   border-radius: 10px;
   padding: 30px;
+  width: 490px;
+  width: 100%;
 }
 .container #vendor div + div {
   padding-top: 20px;
@@ -500,10 +549,11 @@ header .right {
   overflow: hidden;
 }
 .container #paiement {
-  grid-area: 3/2/4/3;
   background-color: #fff;
   border-radius: 10px;
   padding: 30px;
+  width: 490px;
+  width: 100%;
 }
 .container #paiement > div {
   margin-top: 30px;
@@ -627,6 +677,18 @@ header .right {
 }
 .container #paiement > div select::-ms-expand {
   display: none;
+}
+.container .sidebar {
+  width: 490px;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
+  .container .sidebar {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,6 @@
-#vehicule {
-    grid-area: 1 / 1 / 4 / 2;
+#vehicle {
     background-color: $white;
+    width: calc(100% - #{$sidebar-width} - #{$gap});
 
     & > div + div {
         padding: 25px;
@@ -54,10 +54,11 @@
     .thumbnails {
         display: flex;
         justify-content: space-between;
+        gap: 10px;
 
         .img {
             height: 108px;
-            width: 19%;
+            width: 100%;
             background-position: center;
             background-size: cover;
             cursor: pointer;
@@ -133,6 +134,61 @@
                 margin-top: 15px;
                 font-size: 1.1em;
                 padding: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #vehicle {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #vehicle {
+        .specifications .specifications-list .specification {
+            width: 100%;
+        }
+        .contact .form .input {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #vehicle .thumbnails .img:last-child {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #vehicle .thumbnails {
+        flex-wrap: wrap;
+
+        .img {
+            width: calc(50% - 5px);
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #vehicle {
+        & > div + div {
+            padding: 10px 0;
+        }
+
+        .slideshow-container .mySlide {
+            height: 200px;
+        }
+
+        .thumbnails {
+            .img {
+                width: 100%;
+
+                &:last-child {
+                    display: block;
+                }
             }
         }
     }

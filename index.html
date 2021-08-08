@@ -10,8 +10,6 @@
     </head>
 
     <body>
-        <!-- Importation du svg pour pouvoir le manipuler plus facilement par la suite (il est caché grace à height à 0) -->
-        <!-- <svg height="0" style="display: block"> -->
         <!-- Importation du svg pour pouvoir le manipuler plus facilement par la suite -->
         <svg style="display: none">
             <symbol id="svg-arrow" viewBox="0 0 110 63" fill="none">
@@ -69,7 +67,7 @@
         </div>
 
         <div class="container">
-            <section id="vehicule">
+            <section id="vehicle">
                 <div class="slideshow-container" id="slideshow">
                     <a class="prev" id="btn_prev">
                         <svg class="left-arrow">
@@ -149,106 +147,115 @@
                 </div>
             </section>
 
-            <section id="description">
-                <h2 class="title">Mercedes-Benz C63 2017<span class="views">(290 Views)</span></h2>
-                <div class="tags">
-                    <span>Coupe</span>
-                    <span>New Vehicle</span>
-                    <span>Buy Now</span>
-                    <span>Brand Offer</span>
-                </div>
-                <h3 class="subtitle">Lorem ipsum dolor</h3>
-                <div class="description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At nisi omnis accusantium qui! Quia impedit
-                    sit obcaecati officia laudantium. Numquam minus voluptates eos? Odit minus voluptate, veniam
-                    incidunt totam assumenda tempora hic excepturi quis beatae nihil suscipit libero consequuntur
-                    cumque, doloribus neque autem doloremque ad debitis quos molestias esse possimus sint dolores? Minus
-                    tempore cumque voluptate libero, cum voluptates officia temporibus, labore commodi maxime
-                    consectetur in ut id. Quam.
-                </div>
-                <div class="button secondary">$ 43,938.87</div>
-                <div class="button primary">Car Fax</div>
-            </section>
+            <div class="sidebar">
+                <section id="description">
+                    <h2 class="title">Mercedes-Benz C63 2017<span class="views">(290 Views)</span></h2>
+                    <div class="tags">
+                        <span>Coupe</span>
+                        <span>New Vehicle</span>
+                        <span>Buy Now</span>
+                        <span>Brand Offer</span>
+                    </div>
+                    <h3 class="subtitle">Lorem ipsum dolor</h3>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. At nisi omnis accusantium qui! Quia
+                        impedit sit obcaecati officia laudantium. Numquam minus voluptates eos? Odit minus voluptate,
+                        veniam incidunt totam assumenda tempora hic excepturi quis beatae nihil suscipit libero
+                        consequuntur cumque, doloribus neque autem doloremque ad debitis quos molestias esse possimus
+                        sint dolores? Minus tempore cumque voluptate libero, cum voluptates officia temporibus, labore
+                        commodi maxime consectetur in ut id. Quam.
+                    </div>
+                    <div class="button secondary">$ 43,938.87</div>
+                    <div class="button primary">Car Fax</div>
+                </section>
 
-            <section id="vendor">
-                <div class="logo">
-                    <img src="./assets/gnl.png" alt="logo-gnl" />
-                    <span>Certified Dealer</span>
-                    <div class="stars">
-                        <img src="./assets/star.svg" alt="star" />
-                        <img src="./assets/star.svg" alt="star" />
-                        <img src="./assets/star.svg" alt="star" />
-                        <img src="./assets/star.svg" alt="star" />
-                        <img src="./assets/star.svg" alt="star" />
+                <section id="vendor">
+                    <div class="logo">
+                        <img src="./assets/gnl.png" alt="logo-gnl" />
+                        <span>Certified Dealer</span>
+                        <div class="stars">
+                            <img src="./assets/star.svg" alt="star" />
+                            <img src="./assets/star.svg" alt="star" />
+                            <img src="./assets/star.svg" alt="star" />
+                            <img src="./assets/star.svg" alt="star" />
+                            <img src="./assets/star.svg" alt="star" />
+                        </div>
+                        <span>41 km away in Oakville, ON</span>
                     </div>
-                    <span>41 km away in Oakville, ON</span>
-                </div>
-                <div class="description">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, commodi autem illum quibusdam
-                    veniam eaque amet voluptatibus a modi placeat eligendi maxime ad sint aliquam vel recusandae cum
-                    cupiditate! Enim, quam, corrupti necessitatibus quasi omnis aliquid fugiat placeat perferendis
-                    delectus facere maxime voluptates, natus dolorum illo minus sed unde quidem.
-                </div>
-                <div>
-                    <div class="button secondary">Show more</div>
-                </div>
-            </section>
+                    <div class="description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, commodi autem illum
+                        quibusdam veniam eaque amet voluptatibus a modi placeat eligendi maxime ad sint aliquam vel
+                        recusandae cum cupiditate! Enim, quam, corrupti necessitatibus quasi omnis aliquid fugiat
+                        placeat perferendis delectus facere maxime voluptates, natus dolorum illo minus sed unde quidem.
+                    </div>
+                    <div>
+                        <div class="button secondary">Show more</div>
+                    </div>
+                </section>
 
-            <section id="paiement">
-                <h2 class="title">Purchase &amp; Finance Calculator</h2>
-                <div>
-                    <label for="carPrice_input">Car Price</label>
-                    <input type="range" name="carPrice_range" id="carPrice_range" min="0" value="151500" max="250000" />
-                    <div class="inputPrice">
-                        <span>$</span>
+                <section id="paiement">
+                    <h2 class="title">Purchase &amp; Finance Calculator</h2>
+                    <div>
+                        <label for="carPrice_input">Car Price</label>
                         <input
-                            type="text"
-                            name="carPrice_input"
-                            id="carPrice_input"
-                            value="151.500"
-                            placeholder="0"
-                            data-type="currency"
-                            maxlength="7"
+                            type="range"
+                            name="carPrice_range"
+                            id="carPrice_range"
+                            min="0"
+                            value="151500"
+                            max="250000"
                         />
+                        <div class="inputPrice">
+                            <span>$</span>
+                            <input
+                                type="text"
+                                name="carPrice_input"
+                                id="carPrice_input"
+                                value="151.500"
+                                placeholder="0"
+                                data-type="currency"
+                                maxlength="7"
+                            />
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <label for="downPayment_input">Down Payment</label>
-                    <input
-                        type="range"
-                        name="downPayment_range"
-                        id="downPayment_range"
-                        min="0"
-                        value="151500"
-                        max="250000"
-                    />
-                    <div class="inputPrice">
-                        <span>$</span>
+                    <div>
+                        <label for="downPayment_input">Down Payment</label>
                         <input
-                            type="text"
-                            name="downPayment_input"
-                            id="downPayment_input"
-                            placeholder="0"
-                            data-type="currency"
-                            maxlength="7"
+                            type="range"
+                            name="downPayment_range"
+                            id="downPayment_range"
+                            min="0"
+                            value="151500"
+                            max="250000"
                         />
+                        <div class="inputPrice">
+                            <span>$</span>
+                            <input
+                                type="text"
+                                name="downPayment_input"
+                                id="downPayment_input"
+                                placeholder="0"
+                                data-type="currency"
+                                maxlength="7"
+                            />
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <label for="loanType_select">Loan Type</label>
-                    <input type="range" name="loanType_range" id="loanType_range" min="1" value="5" max="7" />
-                    <select name="loanType_select" id="loanType_select">
-                        <option value="1">1-Year Fixed</option>
-                        <option value="2">2-Year Fixed</option>
-                        <option value="3">3-Year Fixed</option>
-                        <option value="4">4-Year Fixed</option>
-                        <option value="5" selected>5-Year Fixed</option>
-                        <option value="6">6-Year Fixed</option>
-                        <option value="7">7-Year Fixed</option>
-                    </select>
-                </div>
-                <div class="button primary">Calculate now</div>
-            </section>
+                    <div>
+                        <label for="loanType_select">Loan Type</label>
+                        <input type="range" name="loanType_range" id="loanType_range" min="1" value="5" max="7" />
+                        <select name="loanType_select" id="loanType_select">
+                            <option value="1">1-Year Fixed</option>
+                            <option value="2">2-Year Fixed</option>
+                            <option value="3">3-Year Fixed</option>
+                            <option value="4">4-Year Fixed</option>
+                            <option value="5" selected>5-Year Fixed</option>
+                            <option value="6">6-Year Fixed</option>
+                            <option value="7">7-Year Fixed</option>
+                        </select>
+                    </div>
+                    <div class="button primary">Calculate now</div>
+                </section>
+            </div>
         </div>
 
         <script src="script.js" type="module"></script>
