@@ -26,3 +26,24 @@
         }
     }
 }
+
+@media screen and (max-width: 700px) {
+    .navigation {
+        padding-top: 90px;
+
+        a + a::before {
+            height: 7px;
+            width: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            transform: rotate(-90deg) translate(1px, 1px);
+        }
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .navigation {
+        display: none;
+    }
+}

@@ -180,6 +180,8 @@
 
 @media screen and (max-width: 400px) {
     #vehicle {
+        margin-top: 100px;
+
         & > div + div {
             padding: 10px 0;
         }
