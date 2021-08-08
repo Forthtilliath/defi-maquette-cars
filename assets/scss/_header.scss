@@ -68,7 +68,7 @@ header {
                 color: $grey;
                 font-size: 1.1em;
 
-                &.active {
+                &.active, &:hover {
                     color: $blue-gray-200;
                     font-weight: bold;
 

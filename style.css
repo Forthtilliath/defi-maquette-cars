@@ -118,11 +118,11 @@ header .middle .navMenu a {
   color: #8091a5;
   font-size: 1.1em;
 }
-header .middle .navMenu a.active {
+header .middle .navMenu a.active, header .middle .navMenu a:hover {
   color: #364553;
   font-weight: bold;
 }
-header .middle .navMenu a.active::after {
+header .middle .navMenu a.active::after, header .middle .navMenu a:hover::after {
   content: "";
   display: block;
   background: #249af2;
