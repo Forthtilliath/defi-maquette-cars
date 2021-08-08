@@ -7,11 +7,18 @@ header {
     .left {
         @include divSpaceBetween;
         color: $blue-gray-200;
+        height: 90px;
 
         h1.logo {
             font-size: 1.8em;
             display: flex;
             width: 140px;
+
+            a {
+                text-decoration: none;
+                color: $blue-gray-200;
+                cursor: pointer;
+            }
         }
 
         .lang-container {
@@ -49,18 +56,15 @@ header {
     }
 
     .middle {
-        height: 100%;
-
         .navMenu {
             overflow: hidden;
-            height: 100%;
 
             a {
                 text-decoration: none;
                 float: left;
                 display: block;
                 padding: 35px 10px;
-                height: 100%;
+                height: 90px;
                 color: $grey;
                 font-size: 1.1em;
 
@@ -84,12 +88,20 @@ header {
                 }
             }
         }
+
+        .btn-toggle-menu {
+            display: none;
+        }
     }
 
     .right {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        height: 90px;
+
         .button {
             padding: 15px 40px;
-            display: inline-block;
 
             + .button {
                 margin-left: 20px;
@@ -98,7 +110,154 @@ header {
     }
 }
 
-/* 
-    Breakpoint menu 1500px
-        Passer le block middle en dessous
-*/
+@media screen and (max-width: 1450px) {
+    header {
+        flex-wrap: wrap;
+        height: 180px;
+
+        .middle {
+            order: 3;
+            height: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    header {
+        height: 100px;
+
+        .left,
+        .right {
+            height: 50px;
+        }
+        .right {
+            .button {
+                padding: 10px 20px;
+                height: auto;
+
+                + .button {
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        .middle {
+            .navMenu a {
+                height: 50px;
+                padding: 20px 5px;
+                font-size: 0.9em;
+
+                &.active::after {
+                    width: calc(100% + 10px);
+                    transform: translateX(-5px) translateY(9px);
+                }
+
+                & + a {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    header {
+        flex-wrap: nowrap;
+        width: 100%;
+        height: 70px;
+        padding: 0 20px;
+        position: fixed;
+        z-index: 2;
+
+        .left {
+            h1.logo {
+                width: auto;
+                font-size: 1.3em;
+            }
+            .lang-container {
+                display: none;
+            }
+        }
+        .right {
+            .button {
+                padding: 10px;
+                height: auto;
+
+                + .button {
+                    margin-left: 10px;
+                }
+            }
+        }
+        .middle {
+            width: auto;
+
+            .navMenu {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: fixed;
+                width: 100%;
+                top: 70px;
+                height: 0;
+                left: 0;
+                background-color: $white;
+                transition: all 1s;
+                transform: translateY(calc(-100% - 70px));
+                opacity: 0;
+
+                &.open {
+                    transform: translateY(0);
+                    height: 300px;
+                    opacity: 1;
+                }
+            }
+            .btn-toggle-menu {
+                display: flex;
+                justify-content: space-around;
+                flex-flow: column nowrap;
+                position: fixed;
+                width: 2rem;
+                height: 2rem;
+                right: 20px;
+                z-index: 20;
+                cursor: pointer;
+
+                div {
+                    width: 2rem;
+                    height: 0.25rem;
+                    background-color: #333;
+                    border-radius: 10px;
+                    transform-origin: 1px;
+                    transition: all 0.3s linear;
+                    &:nth-child(1) {
+                        transform: rotate(0);
+                    }
+                    &:nth-child(2) {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                    &:nth-child(3) {
+                        transform: rotate(0);
+                    }
+                }
+                &.open div {
+                    background-color: #ccc;
+
+                    &:nth-child(1) {
+                        transform: rotate(45deg);
+                    }
+                    &:nth-child(2) {
+                        transform: translateX(100%);
+                        opacity: 0;
+                    }
+                    &:nth-child(3) {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+}

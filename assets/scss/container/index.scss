@@ -1,10 +1,13 @@
 .container {
     display: grid;
-    grid-template-columns: 1fr 490px;
+    grid-template-columns: 1fr minmax(250px, 490px);
     grid-template-rows: repeat(3, auto);
     grid-gap: 30px;
     max-width: 1480px;
-    margin: 0 auto 40px;
+    margin: 0 30px 40px;
+
+    // display: flex;
+    // flex-direction: column;
 
     @import './vehicule';
     @import './description';

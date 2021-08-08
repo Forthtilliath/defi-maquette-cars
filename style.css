@@ -69,11 +69,17 @@ header .left {
   justify-content: space-between;
   align-items: center;
   color: #364553;
+  height: 90px;
 }
 header .left h1.logo {
   font-size: 1.8em;
   display: flex;
   width: 140px;
+}
+header .left h1.logo a {
+  text-decoration: none;
+  color: #364553;
+  cursor: pointer;
 }
 header .left .lang-container .lang {
   display: none;
@@ -100,19 +106,15 @@ header .left .lang-container .lang.active .lang-arrow {
   height: 1.1em;
   stroke-width: 15;
 }
-header .middle {
-  height: 100%;
-}
 header .middle .navMenu {
   overflow: hidden;
-  height: 100%;
 }
 header .middle .navMenu a {
   text-decoration: none;
   float: left;
   display: block;
   padding: 35px 10px;
-  height: 100%;
+  height: 90px;
   color: #8091a5;
   font-size: 1.1em;
 }
@@ -132,22 +134,155 @@ header .middle .navMenu a.active::after {
 header .middle .navMenu a + a {
   margin-left: 20px;
 }
+header .middle .btn-toggle-menu {
+  display: none;
+}
+header .right {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 90px;
+}
 header .right .button {
   padding: 15px 40px;
-  display: inline-block;
 }
 header .right .button + .button {
   margin-left: 20px;
 }
 
-/* 
-    Breakpoint menu 1500px
-        Passer le block middle en dessous
-*/
+@media screen and (max-width: 1450px) {
+  header {
+    flex-wrap: wrap;
+    height: 180px;
+  }
+  header .middle {
+    order: 3;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 900px) {
+  header {
+    height: 100px;
+  }
+  header .left,
+header .right {
+    height: 50px;
+  }
+  header .right .button {
+    padding: 10px 20px;
+    height: auto;
+  }
+  header .right .button + .button {
+    margin-left: 10px;
+  }
+  header .middle .navMenu a {
+    height: 50px;
+    padding: 20px 5px;
+    font-size: 0.9em;
+  }
+  header .middle .navMenu a.active::after {
+    width: calc(100% + 10px);
+    transform: translateX(-5px) translateY(9px);
+  }
+  header .middle .navMenu a + a {
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 700px) {
+  header {
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 70px;
+    padding: 0 20px;
+    position: fixed;
+    z-index: 2;
+  }
+  header .left h1.logo {
+    width: auto;
+    font-size: 1.3em;
+  }
+  header .left .lang-container {
+    display: none;
+  }
+  header .right .button {
+    padding: 10px;
+    height: auto;
+  }
+  header .right .button + .button {
+    margin-left: 10px;
+  }
+  header .middle {
+    width: auto;
+  }
+  header .middle .navMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 70px;
+    height: 0;
+    left: 0;
+    background-color: white;
+    transition: all 1s;
+    transform: translateY(calc(-100% - 70px));
+    opacity: 0;
+  }
+  header .middle .navMenu.open {
+    transform: translateY(0);
+    height: 300px;
+    opacity: 1;
+  }
+  header .middle .btn-toggle-menu {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    position: fixed;
+    width: 2rem;
+    height: 2rem;
+    right: 20px;
+    z-index: 20;
+    cursor: pointer;
+  }
+  header .middle .btn-toggle-menu div {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: #333;
+    border-radius: 10px;
+    transform-origin: 1px;
+    transition: all 0.3s linear;
+  }
+  header .middle .btn-toggle-menu div:nth-child(1) {
+    transform: rotate(0);
+  }
+  header .middle .btn-toggle-menu div:nth-child(2) {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  header .middle .btn-toggle-menu div:nth-child(3) {
+    transform: rotate(0);
+  }
+  header .middle .btn-toggle-menu.open div {
+    background-color: #ccc;
+  }
+  header .middle .btn-toggle-menu.open div:nth-child(1) {
+    transform: rotate(45deg);
+  }
+  header .middle .btn-toggle-menu.open div:nth-child(2) {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  header .middle .btn-toggle-menu.open div:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+}
 .navigation {
   height: 100px;
   max-width: 1480px;
-  margin: 0 auto;
+  margin: 0 30px;
   padding: 40px 0;
 }
 .navigation a {
@@ -172,11 +307,11 @@ header .right .button + .button {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 490px;
+  grid-template-columns: 1fr minmax(250px, 490px);
   grid-template-rows: repeat(3, auto);
   grid-gap: 30px;
   max-width: 1480px;
-  margin: 0 auto 40px;
+  margin: 0 30px 40px;
 }
 .container #vehicule {
   grid-area: 1/1/4/2;

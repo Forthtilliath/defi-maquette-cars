@@ -1,5 +1,8 @@
 import * as utils from './utils.js';
 
+const navMenu = document.querySelector('.navMenu');
+const btn_burger = document.querySelector('.btn-toggle-menu');
+
 const rangeInputs = document.querySelectorAll('input[type="range"]');
 const currencyInputs = document.querySelectorAll("input[data-type='currency']");
 
@@ -9,6 +12,8 @@ const btn_next = document.querySelector('#btn_next');
 const thumbnailsContainer = document.querySelector('.thumbnails');
 
 // Création des evenements
+window.addEventListener('resize', resize);
+
 window.onload = () => {
     rangeInputs.forEach((input) => {
         handleInputChange(input);
@@ -32,6 +37,8 @@ currencyInputs.forEach((input) => {
 
 btn_prev.addEventListener('click', () => plusSlides(-1));
 btn_next.addEventListener('click', () => plusSlides(1));
+
+btn_burger.addEventListener('click', toggleMenu);
 
 /****************************************
  * Paiement                             *
@@ -192,4 +199,22 @@ function showSlides(n) {
     currentIndex = utils.getIndex(n, slideshow.length);
     slideshow.forEach((image) => (image.style.display = 'none'));
     slideshow[currentIndex].style.display = 'block';
+}
+
+
+/****************************************
+ * Menu                                 *
+ ****************************************/
+
+function toggleMenu() {
+    navMenu.classList.toggle('open');
+    btn_burger.classList.toggle('open');
+}
+
+function resize() {
+    console.log(window.innerWidth);
+    if (window.innerWidth > 700) {
+        navMenu.classList.remove('open');
+        btn_burger.classList.remove('open');
+    }
 }
