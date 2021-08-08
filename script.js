@@ -212,7 +212,6 @@ function toggleMenu() {
 }
 
 function resize() {
-    console.log(window.innerWidth);
     if (window.innerWidth > 700) {
         navMenu.classList.remove('open');
         btn_burger.classList.remove('open');

@@ -183,7 +183,7 @@ header .right {
     padding: 20px 5px;
     font-size: 0.9em;
   }
-  header .middle .navMenu a.active::after {
+  header .middle .navMenu a.active::after, header .middle .navMenu a:hover::after {
     width: calc(100% + 10px);
     transform: translateX(-5px) translateY(9px);
   }
@@ -282,8 +282,8 @@ header .right {
 .navigation {
   height: 100px;
   max-width: 1480px;
-  margin: 0 30px;
-  padding: 40px 0;
+  margin: 0 auto;
+  padding: 40px 30px;
 }
 .navigation a {
   text-decoration: none;
@@ -311,7 +311,8 @@ header .right {
   justify-content: center;
   gap: 30px;
   max-width: 1480px;
-  margin: 0 30px 40px;
+  padding: 0 30px;
+  margin: 0 auto 40px;
 }
 .container #vehicle {
   background-color: white;
@@ -437,6 +438,9 @@ header .right {
   }
 }
 @media screen and (max-width: 900px) {
+  .container #vehicle .slideshow-container .mySlide {
+    height: 400px;
+  }
   .container #vehicle .specifications .specifications-list .specification {
     width: 100%;
   }
@@ -445,11 +449,14 @@ header .right {
   }
 }
 @media screen and (max-width: 600px) {
+  .container #vehicle .slideshow-container .mySlide {
+    height: 300px;
+  }
   .container #vehicle .thumbnails .img:last-child {
     display: none;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .container #vehicle .thumbnails {
     flex-wrap: wrap;
   }

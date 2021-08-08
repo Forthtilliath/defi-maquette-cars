@@ -147,6 +147,9 @@
 
 @media screen and (max-width: 900px) {
     #vehicle {
+        .slideshow-container .mySlide {
+            height: 400px;
+        }
         .specifications .specifications-list .specification {
             width: 100%;
         }
@@ -157,12 +160,18 @@
 }
 
 @media screen and (max-width: 600px) {
-    #vehicle .thumbnails .img:last-child {
-        display: none;
+    #vehicle {
+        .slideshow-container .mySlide {
+            height: 300px;
+        }
+
+        .thumbnails .img:last-child {
+            display: none;
+        }
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     #vehicle .thumbnails {
         flex-wrap: wrap;
 
