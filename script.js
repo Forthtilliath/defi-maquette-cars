@@ -125,17 +125,16 @@ const imageNames = ['0.jpg', '1.png', '2.png', '3.jpg', '4.jpg', '5.jpeg', '6.jp
 
 createSlideshow();
 const slideshow = slideshowContainer.querySelectorAll('.mySlide');
+showSlides(0);
 
 function createSlideshow() {
     imageNames.forEach(imageName => {
         const div = document.createElement('div');
         div.classList.add('mySlide');
         div.style.backgroundImage = `url('${path}${imageName}')`;
-        slideshowContainer.insertAdjacentElement('afterbegin', div);
+        slideshowContainer.insertAdjacentElement('beforeend', div);
     });
 }
-
-showSlides(0);
 
 /**
  * 
