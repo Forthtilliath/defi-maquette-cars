@@ -7,7 +7,7 @@
     a {
         text-decoration: none;
         color: #8d9dad;
-        font-size: 1.1em;;
+        font-size: 1.1em;
 
         & + a::before {
             content: '';
@@ -18,7 +18,7 @@
             margin-right: 20px;
             height: 100%;
             transform: rotate(-90deg) translate(-4px, 5px);
-            filter: $filter-grey;
+            filter: $filter-gray;
         }
 
         &:last-child {
